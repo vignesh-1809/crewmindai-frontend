@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal, unique flat design system */
+@layer base {
+  :root {
+    /* Off-white, minimal light palette */
+    --background: 40 20% 96%;          /* off-white */
+    --foreground: 222 15% 14%;         /* ink */
+
+    --card: 0 0% 100%;                 /* white cards */
+    --card-foreground: 222 15% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 15% 14%;
+
+    --primary: 222 85% 46%;            /* clean blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 14% 92%;           /* pale sand */
+    --secondary-foreground: 222 15% 20%;
+
+    --muted: 40 12% 90%;
+    --muted-foreground: 222 8% 40%;
+
+    --accent: 200 70% 45%;             /* teal accent */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 44%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 12% 84%;              /* soft borders */
+    --input: 40 12% 84%;
+    --ring: 222 85% 46%;
+
+    --radius: 0.6rem;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image: none;
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+}
+
+@layer components {
+  /* Remove glass effects → flat cards and headers */
+  .glass { @apply bg-card border border-border shadow-none; }
+  .glass-nav { @apply bg-card border-b border-border shadow-none; }
+
+  /* Minimal hero button */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground rounded-lg;
+  }
+
+  .story-link {
+    @apply text-foreground/90 hover:text-foreground;
+  }
+}
